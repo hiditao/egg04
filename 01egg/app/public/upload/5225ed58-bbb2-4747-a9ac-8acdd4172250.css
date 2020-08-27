@@ -1,0 +1,258 @@
+
+/* html {
+    font-size: 64px;
+} */
+
+/* 公共样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+}
+
+/* 头部下载app模块 start */
+.open-app {
+    width: 100%;
+    height: 0.703rem;
+    background-color: #232326;
+    display: flex;
+    position: relative;
+}
+
+.open-app .btn-close {
+    background-color: transparent;
+    position: absolute;
+    left: 2.5%;
+    top: 50%;
+    margin-top: -0.125rem;
+}
+.open-app .btn-close img {
+    width: 0.25rem;
+    height: 0.25rem;
+}
+
+.open-app a img {
+    width: 0.55rem;
+    height: 0.55rem;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top: -0.275rem;
+}
+
+.open-app .text {
+    position: absolute;
+    left: 22%;
+    top: 50%;
+    margin-top: -0.35rem;
+    font-size: 0.156rem;
+    display: flex;
+    padding: 0.045rem 0;
+}
+
+.open-app .text em {
+    font-style: normal;
+}
+
+.open-app a em:first-of-type {
+    color: #fff;
+    /* font-size: 0.156rem; */
+}
+
+.open-app a em:nth-of-type(2) {
+    color: #999;
+    font-size: 0.125rem;
+}
+
+.open-app .btn-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #cd2525;
+    color: #fff;
+    font-size: 0.22rem;
+}
+/* 头部下载app模块 start */
+
+
+
+/* 广告轮播图部分 start  */
+.slidder-wrpper {
+    width: 100%;
+    height: 3.125rem;
+    position: relative;
+}
+
+.slidder-wrpper .slidder-img {
+	width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slidder-wrpper .slidder-img img {
+    width: 100%;
+    height: 3.125rem;
+}
+
+.slidder-wrpper .search-wrapper {
+    width: 100%;
+    height: 0.703rem;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slidder-wrpper .search-wrapper .menu {
+    width: 0.625rem;
+    height: 0.6875rem;
+    display: flex;
+}
+
+.slidder-wrpper .menu span {
+    display: block;
+    width: 0.3125rem;
+    height: 0.3125rem;
+    margin: auto;
+    background: url("../img/menu.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.slidder-wrpper .search-wrapper form {
+    width: 75vw;
+    height: 68%;
+    margin: auto;
+    border-radius: 0.39rem;
+    position: relative;
+    background-color: #fff;
+}
+.slidder-wrpper form i {
+    display: block;
+}
+.slidder-wrpper form .jd {
+    width: 0.468rem;
+    height: 0.468rem;
+    background: url("../img/jd.png") no-repeat;
+    background-size: 0.3125rem 0.234rem;
+    position: absolute;
+    left: 0.156rem;
+    top: 50%;
+    margin-top: -0.117rem;
+}
+
+.slidder-wrpper form .space {
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+    position: absolute;
+    left: 0.624rem;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.slidder-wrpper form .search {
+    width: 0.28rem;
+    height: 0.234rem;
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    margin-top: -0.117rem;
+    background: url("../img/jd-sprites.png") no-repeat;
+    background-position: -1.3rem 0;
+    background-size: 3.125rem 3.125rem;
+}
+
+.slidder-wrpper form input {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0.156rem;
+    top: 0;
+    /* 去掉边框 */
+    border: none;
+    /* 当输入框获取焦点时，会有一个外边框，下面这行代码就是去掉外边框 */
+    outline: none;
+    padding-left: 0.078rem;
+}
+
+.slidder-wrpper .search-wrapper button {
+    width: 0.625rem;
+    height: 0.6875rem;
+    background-color: transparent;
+    color: #fff;
+    margin-right: 0.078rem;
+}
+/* 广告轮播图部分 end  */
+
+
+
+/* 中间的导航列表部分 start  */
+.box-list {
+    width: 100%;
+    height: 2.77rem;
+}
+
+.box-list .row {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-list .row li {
+    width: 20%;
+    height: 100%;
+    padding: 0.156rem 0;
+    box-sizing: border-box;
+}
+
+.box-list .row li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #666;
+}
+
+
+.box-list .row li img {
+    width: 0.6875rem;
+    height: 0.6875rem;
+    margin: auto;
+}
+
+.box-list .row li span {
+    display: block;
+    width: 100%;
+    height: 25%;
+    font-size: 0.21875rem;
+    text-align: center;
+    margin-top: 0.09rem;
+}
+
+
+/* .one,
+.three,
+.five {
+    background-color: pink;
+}
+.two, 
+.four {
+    background-color: lightgreen;
+} */
+
+
+/* 中间的导航列表部分 end  */

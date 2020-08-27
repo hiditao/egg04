@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="saveLocal()">存localStorage</button>
+    <button onclick="getLocal()">取localStorage</button>
+    <button onclick="clearLocal()">清空localStorage</button>
+    <button onclick="openOther()">打开新页面</button> <br /><br />
+
+    <button onclick="saveSession()">存sessionStorage</button>
+    <button onclick="getSession()">取sessionStorage</button>
+    <button onclick="clearSession()">清空sessionStorage</button><br /><br />
+
+    <button onclick="saveCookie()">存cookie</button>
+    <button onclick="getCookie()">取cookie</button>
+
+    <!-- 
+        localStorage 与 sessionStorage 都是window对象上的属性
+        localStorage 存储的数据是永久保存的，如果清除了浏览器的缓存数据，那么localStorage也会被清除
+        sessionStorage 只在当前会话有效，窗口关闭，数据就消失
+        
+        cookie是document的属性
+        cookie 设置有效期
+     -->
+
+    <script>
+        function saveLocal() {
+            window.localStorage.name = "小明";
+            window.localStorage.pwd = "123";
+
+            localStorage.setItem("sex", "male")
+
+            // localStorage.arr = [1,2,3]; //直接写数组的话，存储的是字符串，相当于([]).toString()
+            localStorage.arr = JSON.stringify([1,2,3]);
+        }
+
+        function getLocal() {
+            console.log(window.localStorage.name)
+            console.log(localStorage.getItem("sex"));
+
+            console.log(JSON.parse(localStorage.arr))
+        }
+
+        function clearLocal() {
+            console.log(localStorage.length)
+            // localStorage.removeItem("sex")
+            localStorage.clear();
+        }
+
+        function openOther() {
+            window.open("./other.html", "_blank");
+        }
+
+        function saveSession() {
+            sessionStorage.username = "aaa";
+        }
+
+        function getSession() {
+            console.log(sessionStorage.username);
+        }
+
+        function clearSession() {
+            sessionStorage.clear()
+        }
+
+        function saveCookie() {
+            console.log("aaa")
+            window.document.cookie = "id=1;max-age=" + 3600*24; // 1天内有效 过期时间单位是秒
+        }
+
+        function getCookie() {
+            console.log(window.document.cookie);
+        }
+    </script>
+
+</body>
+</html>
