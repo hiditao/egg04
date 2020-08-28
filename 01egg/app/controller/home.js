@@ -51,6 +51,29 @@ class HomeController extends Controller {
     ctx.redirect("/")
 
   }
+
+
+  async signIn() {
+    const { ctx } = this;
+
+    console.log(ctx.request.query);
+    ctx.session.username = ctx.request.query.username;
+
+    ctx.body = {
+      username: ctx.session.username,
+      msg: "ok"
+    }
+  }
+
+  async signOut() {
+    const { ctx } = this;
+
+    ctx.session.username = null;
+    ctx.body = {
+      username: "",
+      msg: "ok"
+    }
+  }
 }
 
 module.exports = HomeController;

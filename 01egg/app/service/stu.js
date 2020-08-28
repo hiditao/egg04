@@ -5,7 +5,7 @@ const { Service } = require("egg");
 // 业务处理层：专注于数据库处理
 class StuService extends Service {
     // stuname: 小明， sex: 女
-    async add(stuname, sex) {
+    async addStu(stuname, sex) {
         const { app } = this;
 
         // app.mysql.insert("表名", {字段: 值, 字段: 值...})
@@ -50,6 +50,40 @@ class StuService extends Service {
        console.log(result)
 
        return result;
+    }
+
+    async updateStu(formdata) { 
+        // formdata: {stuname, "", sex: ""}
+
+        let row = {
+            stuname: formdata.stuname,
+            sex: formdata.sex
+        };
+        let options = {
+            where: {
+                sid: formdata.sid
+            }
+        }
+
+        let result = await this.app.mysql.update("stu", row, options);
+        if(result.affectedRows) {
+            return {code: 2, msg: "数据修改成功"}
+        } else {
+            return {code: -2, msg: "数据修改失败"}
+        }
+    }
+
+    async delStu(formdata) {
+        let result = await this.app.mysql.delete("stu", {
+            stuname: formdata.stuname
+        })
+        console.log(result);
+
+        if(result.affectedRows) {
+            return {code: 3, msg: "数据删除成功"}
+        } else {
+            return {code: -1, msg: "操作失败"}
+        }
     }
 }
 
